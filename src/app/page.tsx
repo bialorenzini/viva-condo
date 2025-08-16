@@ -1,5 +1,7 @@
 "use client"
 
+import GreetingCard from "./components/card";
+
 type Morador = {
   primeiroNome: string;
   sobrenome: string
@@ -11,22 +13,21 @@ export default function Home () {
     sobrenome: '🤠'
   }
 
-  // const morador = null
-
   function formatarNomeMorador(morador: Morador){
     return morador.primeiroNome + ' ' + morador.sobrenome;
   }
 
   function obterSaudacao(morador: null | Morador) {
     if (morador) {
-      return <span>Olá, {formatarNomeMorador(morador)} </span>
+      const moradorTratado = formatarNomeMorador(morador)
+      return "Olá, " + moradorTratado
     }
-    return <span>Olá, Estranho!!!</span>
+    return "Olá, Estranho!!!"
   }
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold">{obterSaudacao(morador)}</h1>
+      <GreetingCard  label={obterSaudacao(morador)}/>
     </div>
   )
 }
