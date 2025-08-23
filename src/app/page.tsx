@@ -29,7 +29,7 @@ export default function Home () {
         <h1 id="name" className="text-2xl font-bold text-center">
             {obterSaudacao(morador)}
         </h1>
-    </div>
+      </div>
     </div>
   )
 }
